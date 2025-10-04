@@ -43,53 +43,56 @@ export default function Home() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Hero */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          <div>
-            <h1 className="text-5xl font-bold mb-6">
-              <span className="text-accent">whY More...</span><br />
-              Innovation, Precision, Human Touch
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Like a Swiss Army knife, I combine HR expertise, AI innovation, and gamification to solve complex challenges.
-            </p>
-            <a
-              href="#contact"
-              className="bg-accent text-white px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all font-semibold text-lg"
-            >
-              Book a Free Strategy Call
-            </a>
-          </div>
-          <div className="flex justify-center">
-            <Image
-              src="/profile-photo.jpg"
-              alt="Yvonne Müller"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-xl object-cover"
-              priority
-            />
-          </div>
-        </section>
+        // app/page.tsx (Hero-Bereich)
+<section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6 py-24">
+  <div>
+    <h1 className="text-5xl font-bold mb-6">
+      <span className="text-accent">whY More...</span><br />
+      Innovation, Precision, Human Touch
+    </h1>
+    <p className="text-xl text-gray-600 mb-8">
+      Like a Swiss Army knife, I combine HR expertise, AI innovation, and gamification to solve complex challenges.
+    </p>
+    <a
+      href="#contact"
+      className="bg-accent text-white px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all font-semibold text-lg"
+    >
+      Book a Free Strategy Call
+    </a>
+  </div>
+  <div className="flex justify-center">
+    <Image
+      src="/profile-photo.jpg"
+      alt="Yvonne Müller"
+      width={400}
+      height={400}
+      className="rounded-lg shadow-xl object-cover"
+      priority
+    />
+  </div>
+</section>
+
 
         {/* Services */}
-        <section id="services" className="mb-24">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary">What I Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Strategic HR Consulting", "AI-driven Tools", "Gamification"].map((service) => (
-              <div
-                key={service}
-                className="bg-light p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 hover:border-accent"
-              >
-                <h3 className="text-2xl font-bold mb-4 text-primary">{service}</h3>
-                <p className="text-gray-600">
-                  {service === "Strategic HR Consulting" && "Comprehensive HR strategies for modern organizations."}
-                  {service === "AI-driven Tools" && "Leverage AI to automate and optimize HR processes."}
-                  {service === "Gamification" && "Engage teams with creative, game-based learning solutions."}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <section id="services" className="max-w-7xl mx-auto px-6 py-16">
+  <h2 className="text-4xl font-bold text-center mb-12 text-primary">What I Do</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      { title: "Strategic HR Consulting", desc: "Comprehensive HR strategies for modern organizations." },
+      { title: "AI-driven Tools", desc: "Leverage AI to automate and optimize HR processes." },
+      { title: "Gamification", desc: "Engage teams with creative, game-based learning solutions." },
+    ].map((service) => (
+      <div
+        key={service.title}
+        className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 hover:border-accent"
+      >
+        <h3 className="text-2xl font-bold mb-4 text-primary">{service.title}</h3>
+        <p className="text-gray-600">{service.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Contact */}
         <section id="contact" className="bg-light py-16 rounded-xl">
